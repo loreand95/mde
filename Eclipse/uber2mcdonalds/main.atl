@@ -1,0 +1,55 @@
+-- @path MM=/it.disim.loreand.mde/model/mde.ecore
+-- @path MM1=/it.disim.loreand.mde/model/mcdonald.ecore
+
+module main;
+create OUT : MM1 from IN : MM;
+
+
+helper context MM!Rider def : isGoodEmployee() : Boolean =
+	if self.CarriedOutRoutes.oclIsUndefined() and self.CarriedOutRoutes > 10 then
+		true
+	else
+		false
+	endif;
+
+rule Car2Food {
+
+	from 
+		src : MM!Uber
+	to
+		trg : MM1!Restaurant (
+		
+			name <- src.name,
+			clients <- src.customers,
+			waiters <- src.riders
+		)
+}
+
+rule Customer2Client {
+
+	from 
+		src : MM!Customer
+	to
+		trg : MM1!Client (
+		
+			id <- src.id,
+			name <- src.name,
+			surname <- src.surname,
+			email <- src.email,
+			subscriptionDate <- src.subscriptionDate
+		)
+}
+
+rule Rider2Waiter {
+
+	from 
+		src : MM!Rider (src.isGoodEmployee())
+	to
+		trg : MM1!Waiter (
+		
+			id <- src.id,
+			name <- src.name,
+			surname <- src.surname,
+			email <- src.email
+		)
+}
