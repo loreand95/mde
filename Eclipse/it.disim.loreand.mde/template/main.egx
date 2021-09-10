@@ -1,0 +1,20 @@
+rule Company2Html
+	transform cp : Uber {
+		template: "customers.egl"
+		
+		target : "customers.html" 
+	}
+	
+rule Routes2Html
+	transform cp : Uber {
+		template: "routes.egl"
+		
+		target : "routes.html" 
+	}
+	
+rule Riders2Html
+	transform cp : Uber {
+		template: "riders.egl"
+		
+		target : "riders.html" 
+	}

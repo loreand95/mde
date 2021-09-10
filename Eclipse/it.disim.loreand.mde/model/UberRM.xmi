@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mde:Uber xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:mde="http://www.loreand.it/mde"
+    name="Uber Roma"
+    manager="Ugo Tozzi"
+    address="Via Condotti 1, Roma RM">
+  <customers
+      id="0"
+      name="Alfredo"
+      surname="Colangeli"
+      email="alfredo@mail.it"
+      subscriptionDate="2021-03-01T00:00:00.000+0100"
+      expirationDate="2021-12-31T00:00:00.000+0100"
+      routes="20"/>
+  <customers
+      id="1"
+      name="Mattia"
+      surname="Fazzio"
+      email="mattia@mail.it"
+      subscriptionDate="2021-04-22T00:00:00.000+0200"
+      expirationDate="2021-12-31T00:00:00.000+0100"/>
+  <riders id="10"
+      name="Claudio"
+      surname="Lopez"
+      email="claudio@mail.it"
+      routes="20"/>
+  <riders id="11"
+      name="Sergio"
+      surname="Mattarella"
+      email="sergio@mail.it"/>
+  <routes id="20"
+      price="32.0"
+      date="2021-06-21T00:13:00.000+0200"
+      startAddress="VIa Flaminia 22, Roma RM"
+      endAddress="Via Aurelia 53, Roma RM"
+      customer="0"
+      rider="10"
+      seat="3"/>
+</mde:Uber>

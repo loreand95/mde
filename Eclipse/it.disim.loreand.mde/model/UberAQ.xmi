@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mde:Uber xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:mde="http://www.loreand.it/mde"
+    name="Uber L'Aquila"
+    manager="Andrea Rossi"
+    address="Via Roma 12, L'Aquila AQ">
+  <customers
+      id="0"
+      name="Marco"
+      surname="Rossi"
+      email="marco@mail.it"
+      subscriptionDate="2020-10-01T01:00:00.000+0200"
+      expirationDate="2022-12-31T00:00:00.000+0100"
+      routes="21"/>
+  <customers
+      id="1"
+      name="Mario"
+      surname="Neri"
+      email="marco@mail.it"
+      subscriptionDate="2021-04-22T00:00:00.000+0200"
+      expirationDate="2022-12-31T00:00:00.000+0100"
+      status="ACTIVED"
+      routes="20"/>
+  <riders id="10"
+      name="Alessandro"
+      surname="Borghi"
+      email="ale@mail.it"
+      status="UNAVAILABLE"
+      routes="21"/>
+  <riders id="11"
+      name="Pietro"
+      surname="Di Francesco"
+      email="pietro@mail.it"
+      routes="20"/>
+  <routes id="20"
+      price="7.0"
+      date="2021-03-04T10:00:00.000+0100"
+      startAddress="Via Belisario 143, L'Aquila AQ"
+      endAddress="Via Europa 10, L'Aquila AQ"
+      feedback="1"
+      customer="1"
+      rider="11"
+      seats="1"/>
+  <routes id="21"
+      price="4.0"
+      date="2020-12-12T00:00:00.000+0100"
+      startAddress="sa"
+      endAddress="as"
+      feedback="1"
+      customer="0"
+      rider="10"
+      seats="2"/>
+</mde:Uber>

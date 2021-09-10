@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="[%=cp.manager%]">
+		<title> [%=cp.name%] </title>
+		
+		<style>
+			td { width:100px }
+			table, th, td {
+  				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="index.html"><h1>[%=cp.name%]</h1></a>
+		<hr>
+		<h2>Customers</h2>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Surname</th>
+				<th>Status</th>
+				<th>Subsciorion Day</th>
+				<th>Expiration Day</th>
+				<th>Routes</th>
+			</tr>
+			[%for (customer in cp.customers) { %]
+			<tr>
+				<td>
+					[%=customer.id%]
+				</td>
+				<td>
+					[%=customer.name%]
+				</td>
+				<td>
+					[%=customer.surname%]
+				</td>
+				<td>
+					[%=customer.status%]
+				</td>
+				<td>
+					[%=customer.subscriptionDate.getDay()%]/[%=customer.subscriptionDate.getMonth()%]/[%=customer.subscriptionDate.getYear()+1900%]
+				</td>
+				<td>
+					[%=customer.expirationDate.getDay()%]/[%=customer.expirationDate.getMonth()%]/[%=customer.expirationDate.getYear()+1900%]
+				</td>
+				<td>
+					<a href="routes.html"> View</a>
+				</td>
+			</tr>
+			[%}%]
+		</table>
+	</body>
+</html>
