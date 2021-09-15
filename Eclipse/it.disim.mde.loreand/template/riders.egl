@@ -1,0 +1,22 @@
+<h1>Riders</h1>
+<br>
+<table class="table table-hover">
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Surname</th>
+		<th>Status Day</th>
+		<th>Live Position</th>
+		<th>Routes</th>
+	</tr>
+	[%for (rider in cp.riders) { %]
+		<tr>
+			<td>[%=rider.id%]</td>
+			<td>[%=rider.name%]</td>
+			<td>[%=rider.surname%]</td>
+			<td>[%=rider.status%]</td>
+			<td><a class="btn btn-primary btn-sm" href="routes.html"> Show</a></td>
+			<td><a class="btn btn-primary btn-sm" href="routes.html"> Details</a></td>
+		</tr>
+	[%}%]
+</table>

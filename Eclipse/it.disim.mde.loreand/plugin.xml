@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated uber -->
+      <package
+            uri="http://www.loreand.it/mde"
+            class="it.disim.mde.loreand.uber.UberPackage"
+            genModel="model/uber.genmodel"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mcdonald:Restaurant
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:mcdonald="http://www.example.org/mcdonald"
+    name="Aquila"
+    address="Via Giacomo Leopardi 9, AQ">
+  <waiters id="0"
+      name="Marco"
+      surname="Rossi"/>
+  <waiters id="1001"
+      name="Luca"
+      surname="Abete"/>
+  <waiters id="1002"
+      name="Giovanni"
+      surname="Baglio"/>
+  <waiters id="1003"
+      name="Alfredo"
+      surname="Baggio"/>
+  <floors name="First Floor"
+      waiters="0 1001">
+    <tables
+        name="Table 1A"
+        places="6">
+      <clients
+          id="0"
+          name="Gustavo"
+          surname="Trucco"/>
+    </tables>
+    <tables
+        name="Table 1B"
+        places="6">
+      <clients
+          id="1"
+          name="Luigi"
+          surname="Tosto"/>
+      <clients
+          id="3"
+          name="Sara"
+          surname="Nervi"/>
+    </tables>
+  </floors>
+  <floors name="Second Floor"
+      waiters="1002 1003">
+    <tables
+        name="Table 2A"
+        places="12"/>
+    <tables
+        name="Table 2B"
+        places="12"/>
+  </floors>
+</mcdonald:Restaurant>

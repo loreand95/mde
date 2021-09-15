@@ -1,0 +1,46 @@
+rule Index2Html
+	transform cp : Uber {
+		
+		 parameters : Map {
+        	"path" = "index.egl"
+    	}
+    
+		template: "base.egl"
+
+		target : "site/index.html" 
+	}
+
+rule Company2Html
+	transform cp : Uber {
+		
+		 parameters : Map {
+        	"path" = "customers.egl"
+    	}
+    
+		template: "base.egl"
+
+		target : "site/customers.html" 
+	}
+	
+rule Routes2Html
+	transform cp : Uber {
+	
+		parameters : Map {
+        	"path" = "routes.egl"
+    	}
+    	
+		template: "base.egl"
+		
+		target : "site/routes.html" 
+	}
+	
+rule Riders2Html
+	transform cp : Uber {
+	
+		parameters : Map {
+        	"path" = "riders.egl"
+    	}
+		template: "base.egl"
+		
+		target : "site/riders.html" 
+	}

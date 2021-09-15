@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mcdonald" nsURI="http://www.example.org/mcdonald" nsPrefix="mcdonald">
+  <eClassifiers xsi:type="ecore:EClass" name="Restaurant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="waiters" upperBound="-1"
+        eType="#//Waiter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="floors" lowerBound="1"
+        upperBound="-1" eType="#//Floor" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="surname" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Client" eSuperTypes="#//User">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"
+        eOpposite="#//Table/clients"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Waiter" eSuperTypes="#//User">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" lowerBound="1" eType="#//RoleWaiter"
+        defaultValueLiteral="CAPTAIN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="floor" lowerBound="1" upperBound="-1"
+        eType="#//Floor" eOpposite="#//Floor/waiters"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Floor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tables" upperBound="-1"
+        eType="#//Table" containment="true" eOpposite="#//Table/floor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="waiters" upperBound="-1"
+        eType="#//Waiter" eOpposite="#//Waiter/floor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Table">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="places" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clients" upperBound="-1"
+        eType="#//Client" containment="true" eOpposite="#//Client/table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="floor" lowerBound="1" eType="#//Floor"
+        eOpposite="#//Floor/tables"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoleWaiter">
+    <eLiterals name="BARTENDER"/>
+    <eLiterals name="CAPTAIN" value="1"/>
+    <eLiterals name="MAITRE" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

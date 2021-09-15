@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uber:Uber xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uber="http://www.loreand.it/mde" name="Uber L'Aquila" manager="Alberto Rossi" address="Via Monaco 3">
+  <customers id="0" name="Lorenzo" surname="Andreoli" email="mario@mail.it" subscriptionDate="01-12-2021" expirationDate="01-12-2022" status="ACTIVED" routes="101 100">
+    <cardID id="23102" path="/images/23102.png" releaseDate="01-01-2019" institution="Comune" approved="10001"/>
+  </customers>
+  <customers id="1" name="Andrea" surname="Rossi" email="andrea@mail.it" subscriptionDate="01-01-2021" expirationDate="31-12-2022" status="ACTIVED" routes="102 104">
+    <cardID id="45432" path="/images/45432.png" releaseDate="01-12-2019" institution="Comune"/>
+  </customers>
+  <riders id="10" name="Abete" surname="Abete" email="Luca" routes="100 104">
+    <location lat="10.23" lng="12.04"/>
+    <car licencePlate="AC123CC" model="Lancia" color="blue"/>
+  </riders>
+  <riders id="11" name="Fabio" surname="Macchia" email="fabio@mail.it" status="BUSY" routes="101">
+    <location lat="10.0" lng="12.0"/>
+    <car licencePlate="FF123FF" model="BMW" color="Black"/>
+  </riders>
+  <riders id="15" name="Mario" surname="Borghi" email="mario@mail.it" routes="102">
+    <location/>
+    <car licencePlate="FF123CC" model="Opel" color="Red"/>
+  </riders>
+  <routes id="100" price="5.0" date="12-12-2021" startAddress="Via Pretatti 60, AQ" endAddress="Via Roma 12, AQ" feedback="10" customer="0" rider="10" seats="1"/>
+  <routes id="101" price="4.0" date="10-03-2021" startAddress="Via Empoli 200, AQ" endAddress="Via Cesena 12, AQ" feedback="10" customer="0" rider="11" seats="2"/>
+  <routes id="102" price="12.0" date="12-05-2021" startAddress="Via Moro 12, AQ" endAddress="Via Beato 12, AQ" feedback="10" customer="1" rider="15" seats="3"/>
+  <routes id="104" price="5.0" date="12-12-2021" startAddress="Via Nola 33, AQ" endAddress="Via Mosca 3, AQ" feedback="8" customer="1" rider="10" seats="3"/>
+  <supervisors id="10001" name="Franco" surname="Califano" email="fra@mail.it" cards="23102"/>
+  <supervisors id="10002" name="Emis" surname="Killa" email="emis@mail.it" role="ACCOUNTANT"/>
+  <supervisors id="10003" name="Massimo" surname="Oddo" email="oddo@mail.it" role="STORE"/>
+</uber:Uber>

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: it.disim.mde.loreand.xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: it.disim.mde.loreand.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: it.disim.mde.loreand.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: it.disim.mde.loreand,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: it.disim.mde.loreand.xtext.validation,
+ it.disim.mde.loreand.xtext.scoping,
+ it.disim.mde.loreand.xtext.services,
+ it.disim.mde.loreand.xtext.generator,
+ it.disim.mde.loreand.xtext.serializer,
+ it.disim.mde.loreand.xtext.parser.antlr.internal,
+ it.disim.mde.loreand.xtext.parser.antlr,
+ it.disim.mde.loreand.xtext.formatting2,
+ it.disim.mde.loreand.xtext
+Import-Package: org.apache.log4j

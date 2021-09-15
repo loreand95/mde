@@ -1,0 +1,24 @@
+<h1>Customers</h1>
+<br>
+<table class="table table-hover">
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Surname</th>
+		<th>Status</th>
+		<th>Subscription Day</th>
+		<th>Expiration Day</th>
+		<th>Routes</th>
+	</tr>
+	[%for (customer in cp.customers) { %]
+		<tr>
+			<td>[%=customer.id%]</td>
+			<td>[%=customer.name%]</td>
+			<td>[%=customer.surname%]</td>
+			<td>[%=customer.status%]</td>
+			<td>[%=customer.subscriptionDate%]</td>
+			<td>[%=customer.expirationDate%]</td>
+			<td><a class="btn btn-primary btn-sm" href="routes.html">Details</a></td>
+		</tr>
+	[%}%]
+</table>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mcdonald:Restaurant xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mcdonald="http://www.example.org/mcdonald" name="Uber L'Aquila" address="Via Monaco 3">
+  <waiters id="10" name="6.0" surname="Abete" floor="//@floors.0"/>
+  <waiters id="11" name="5.0" surname="Macchia" floor="//@floors.0"/>
+  <waiters id="15" name="6.666666666666667" surname="Borghi" role="BARTENDER" floor="//@floors.0"/>
+  <waiters id="10001" name="Franco" surname="Califano" role="MAITRE" floor="//@floors.0"/>
+  <waiters id="10002" name="Emis" surname="Killa" role="MAITRE" floor="//@floors.0"/>
+  <waiters id="10003" name="Massimo" surname="Oddo" role="MAITRE" floor="//@floors.0"/>
+  <floors name="First Floor" waiters="10 11 15 10001 10002 10003">
+    <tables name="100" places="1">
+      <clients id="0" name="Lorenzo" surname="Andreoli"/>
+      <clients id="1" name="Andrea" surname="Rossi"/>
+    </tables>
+    <tables name="101" places="2"/>
+    <tables name="102" places="3"/>
+    <tables name="103" places="1"/>
+    <tables name="104" places="3"/>
+  </floors>
+</mcdonald:Restaurant>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/it.disim.mde.loreand/src-gen" creationIcons="false"
+    editDirectory="/it.disim.mde.loreand.edit/src-gen" editorDirectory="/it.disim.mde.loreand.editor/src-gen"
+    modelPluginID="it.disim.mde.loreand" modelName="Uber" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>uber.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Uber" basePackage="it.disim.mde.loreand" disposableProviderFactory="true"
+      ecorePackage="uber.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="uber.ecore#//RiderStatus">
+      <genEnumLiterals ecoreEnumLiteral="uber.ecore#//RiderStatus/AVAILABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="uber.ecore#//RiderStatus/BUSY"/>
+      <genEnumLiterals ecoreEnumLiteral="uber.ecore#//RiderStatus/UNAVAILABLE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="uber.ecore#//RouteStatus">
+      <genEnumLiterals ecoreEnumLiteral="uber.ecore#//RouteStatus/DONE"/>
+      <genEnumLiterals ecoreEnumLiteral="uber.ecore#//RouteStatus/DOING"/>
+      <genEnumLiterals ecoreEnumLiteral="uber.ecore#//RouteStatus/PENDING"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="uber.ecore#//CustomerStatus">
+      <genEnumLiterals ecoreEnumLiteral="uber.ecore#//CustomerStatus/PENDING"/>
+      <genEnumLiterals ecoreEnumLiteral="uber.ecore#//CustomerStatus/ACTIVED"/>
+      <genEnumLiterals ecoreEnumLiteral="uber.ecore#//CustomerStatus/BANNED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="uber.ecore#//RoleSupervisor">
+      <genEnumLiterals ecoreEnumLiteral="uber.ecore#//RoleSupervisor/MANAGER"/>
+      <genEnumLiterals ecoreEnumLiteral="uber.ecore#//RoleSupervisor/ACCOUNTANT"/>
+      <genEnumLiterals ecoreEnumLiteral="uber.ecore#//RoleSupervisor/STORE"/>
+    </genEnums>
+    <genClasses ecoreClass="uber.ecore#//Uber">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Uber/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Uber/manager"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Uber/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uber.ecore#//Uber/customers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uber.ecore#//Uber/riders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uber.ecore#//Uber/routes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uber.ecore#//Uber/supervisors"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="uber.ecore#//User">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//User/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//User/surname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//User/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//User/fullName"/>
+    </genClasses>
+    <genClasses ecoreClass="uber.ecore#//Customer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Customer/subscriptionDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Customer/expirationDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Customer/status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uber.ecore#//Customer/routes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uber.ecore#//Customer/cardID"/>
+    </genClasses>
+    <genClasses ecoreClass="uber.ecore#//Rider">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Rider/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uber.ecore#//Rider/location"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uber.ecore#//Rider/routes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Rider/CarriedOutRoutes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Rider/score"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uber.ecore#//Rider/car"/>
+      <genOperations ecoreOperation="uber.ecore#//Rider/CarriedOutCustomers"/>
+      <genOperations ecoreOperation="uber.ecore#//Rider/isGoodEmployee"/>
+    </genClasses>
+    <genClasses ecoreClass="uber.ecore#//Geolocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Geolocation/lat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Geolocation/lng"/>
+    </genClasses>
+    <genClasses ecoreClass="uber.ecore#//Route">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Route/price"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Route/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Route/startAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Route/endAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Route/feedback"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Route/status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uber.ecore#//Route/customer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uber.ecore#//Route/rider"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Route/seats"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="uber.ecore#//Identifiable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Identifiable/id"/>
+    </genClasses>
+    <genClasses ecoreClass="uber.ecore#//Supervisor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Supervisor/role"/>
+    </genClasses>
+    <genClasses ecoreClass="uber.ecore#//CardID">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//CardID/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//CardID/releaseDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//CardID/institution"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uber.ecore#//CardID/approved"/>
+    </genClasses>
+    <genClasses ecoreClass="uber.ecore#//Car">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Car/licencePlate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Car/model"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uber.ecore#//Car/color"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

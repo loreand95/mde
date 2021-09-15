@@ -1,0 +1,24 @@
+<h2>Routes</h2>
+<br>
+<table class="table table-hover">
+	<tr>
+		<th>Id</th>
+		<th>Start Address</th>
+		<th>End Address</th>
+		<th>Seats</th>
+		<th>Date</th>
+		<th>Customer</th>
+		<th>Rider</th>
+	</tr>
+	[%for (route in cp.routes) { %]
+	<tr>
+		<td>[%=route.id%]</td>
+		<td>[%=route.startAddress%]</td>
+		<td>[%=route.endAddress%]</td>
+		<td>[%=route.seats%]</td>
+		<td>[%=route.date%]</td>
+		<td><a class="btn btn-primary btn-sm" id="[%=route.customer.id%]" href="customers.html">[%=route.customer.name%] [%=route.customer.surname%]</a></td>
+		<td><a class="btn btn-primary btn-sm" id="[%=route.rider.id%]" href="riders.html">[%=route.rider.name%] [%=route.rider.surname%]</a></td>
+	</tr>
+	[%}%]
+</table>

@@ -1,0 +1,104 @@
+-- @path MM=/it.disim.mde.loreand/model/mde.ecore
+-- @path MM1=/it.disim.mde.loreand/model/mcdonald.ecore
+
+module main;
+create OUT : MM1 from IN : MM;
+
+
+helper context MM!Rider def : isGood() : Boolean =
+	if self.score > 6 then
+		true
+	else
+		false
+	endif;
+
+
+rule Uber2Restaurant {
+
+	from 
+		src : MM!Uber
+	to
+		floor : MM1!Floor(name<-'First Floor'),
+		
+		trg : MM1!Restaurant (
+		
+			name <- src.name,
+			address <- src.address,
+			waiters <- src.riders,
+			waiters <- src.supervisors,
+			floors <-  floor
+		)
+}
+
+rule Rider2Waiter {
+
+	from 
+		src : MM!Rider (not src.isGood())
+	to
+		trg : MM1!Waiter (
+		
+			id <- src.id,
+			name <- src.score.toString(),
+			surname <- src.surname,
+			floor <- MM1!Floor.allInstances()->asSequence()->first()
+			)
+}
+
+
+rule Rider2Bartender {
+
+	from 
+		src : MM!Rider (src.isGood())
+	to
+		trg : MM1!Waiter (
+		
+			id <- src.id,
+			name <- src.score.toString(),
+			surname <- src.surname,
+			role <- 'BARTENDER',
+			floor <- MM1!Floor.allInstances()->asSequence()->first()
+		)
+}
+
+
+rule Supervisor2Maitre {
+
+	from 
+		src : MM!Supervisor 
+	to
+		trg : MM1!Waiter (
+		
+			id <- src.id,
+			name <- src.name,
+			surname <- src.surname,
+			role <- 'MAITRE',
+			floor <- MM1!Floor.allInstances()->asSequence()->first()
+		)
+}
+
+rule Route2Table {
+
+	from 
+		src : MM!Route 
+	to
+		trg : MM1!Table (
+		
+			name <- src.id,
+			places <- src.seats,
+			floor <- MM1!Floor.allInstances()->asSequence()->first()
+		)
+}
+
+rule Customers2Clients {
+
+	from 
+		src : MM!Customer 
+	to
+		trg : MM1!Client (
+		
+			id <- src.id,
+			name <- src.name,
+			surname <- src.surname,
+			table <- MM1!Table.allInstances()->asSequence()->first()
+		)
+}

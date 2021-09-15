@@ -1,0 +1,6 @@
+<h1>[%=cp.name%]</h1>
+<div class="mt-5" style="display:flex;justify-content:space-between">
+<a href="riders.html" class="btn btn-primary">Riders</a>
+<a href="customers.html" class="btn btn-primary">Customers</a>
+<a href="routes.html" class="btn btn-primary">Routes</a>
+</div>
